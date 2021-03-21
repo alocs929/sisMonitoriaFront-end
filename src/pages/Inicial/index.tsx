@@ -15,7 +15,7 @@ function Inicial () {
   },[totalConnections]);
 
   return (
-    <>
+    <div>
       <div id="page-landing">
         <div id="page-landing-content" className="container">
           
@@ -41,7 +41,7 @@ function Inicial () {
         </div>
       </div>
     
-    </>
+    </div>
   );
 }
 

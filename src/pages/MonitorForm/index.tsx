@@ -93,13 +93,13 @@ function MonitorForm(){
                 onChange={(e)=>{ setName(e.target.value)}}  
               />
               <Input 
-                label="Avatar" 
+                label="Link da sua foto(comece com //http)" 
                 name="avatar"
                 value={avatar}
                 onChange={(e)=>{ setAvatar(e.target.value)}}  
               />
               <Input 
-                label="Whatsapp" 
+                label="Whatsapp (somente números)" 
                 name="whatsapp"
                 value={whatsapp}
                 onChange={(e)=>{ setWhatsapp(e.target.value)}}  
@@ -128,7 +128,7 @@ function MonitorForm(){
                 ]}
                 />
               <Input 
-                label="Custo da sua hora por aula"
+                label="Custo da sua hora por aula (em R$)"
                 name="cost"
                 value={cost}
                 onChange={(e)=>{setCost(e.target.value)}}

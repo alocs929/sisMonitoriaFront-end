@@ -8,7 +8,6 @@ import Textarea from '../../components/Textarea';
 import Select from '../../components/Select';
 import api from '../../services/api';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 
 function MonitorForm(){
 
@@ -21,8 +20,6 @@ function MonitorForm(){
 
   const [subject, setSubject] = useState('');
   const [cost, setCost] = useState('');
-
-
 
   const [scheduleItems, setScheduleItems] = useState([
     {week_day: 0, from: '',to: '' }
@@ -48,7 +45,7 @@ function MonitorForm(){
 
   function handleCreateClass (e: FormEvent){
     e.preventDefault();
-    api.post('/monitor',{
+    api.post('/classes',{
       name,
       avatar,
       whatsapp,
@@ -62,7 +59,8 @@ function MonitorForm(){
     }).catch(()=>{
       alert('Erro no cadastro!')
     });
-
+    
+    /*
     console.log({
       name,
       avatar,
@@ -72,6 +70,7 @@ function MonitorForm(){
       cost,
       scheduleItems
     });
+    */
   }
 
   return(
@@ -79,7 +78,7 @@ function MonitorForm(){
       <div id="page-teacher-form" className="container">
         <PageHeader 
           title="Que incrivel que você quer dar aulas."
-          description= "O primeiro passo é preencher esse formulário de inscrição."
+          description= "O primeiro passo é preencher esse formulário de inscrição"
         />
 
         <main>

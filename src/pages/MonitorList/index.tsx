@@ -2,14 +2,11 @@ import React, { useState, FormEvent } from  'react';
 
 import PageHeader from '../../components/PageHeader';
 
-
 import './styles.css';
 import TeacherItem, {Teacher} from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
 import api from '../../services/api';
-
-
 
 function MonitorList(){
   const [teachers, setTeachers] = useState([]);
@@ -30,8 +27,6 @@ function MonitorList(){
     });
 
     setTeachers(response.data);
-
-
   }
 
   return(
@@ -80,11 +75,18 @@ function MonitorList(){
         </PageHeader>
 
         <main>
-          {teachers.map((teacher: Teacher) =>{
-            return(
-              <TeacherItem key={teacher.id} teacher={teacher}/>
-            );
-          })}
+          {teachers.length > 0 ?
+            teachers.map((teacher: Teacher) => {
+              return <TeacherItem key={teacher.id} teacher={teacher} />;
+            })
+            :
+            <div className="no-found">
+              <p>
+                Nenhum professor encontrado
+                com sua pesquisa.
+              </p>
+            </div>
+          }
         </main>
       </div>
     </>
